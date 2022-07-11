@@ -2,7 +2,7 @@
 
 print_help () {
     echo "This script install all the dotfiles to there right place"
-    echo "Use './setup --all' to install all dotfiles (zsh,tmux,kitty,vim,conky,lsd,neofetch)"
+    echo "Use './setup --all' to install all dotfiles (zsh,tmux,kitty,vim,polybar)"
     echo "use './setup zsh' to only install zsh, './setup.sh tmux vim' to only install vim and tmux..."
 }
 
