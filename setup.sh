@@ -59,7 +59,7 @@ kitty_install () {
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- vim
 
 vim_install () {
-    if ! [ -x "$(command -v vim)"]; then
+    if ! [ -x "$(command -v vim-runtime)"]; then
         echo "[SETUP] installing vim"
         sudo $tool vim
     fi
