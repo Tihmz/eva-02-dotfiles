@@ -1,0 +1,44 @@
+! -----------------------------------------------------------------------------
+! Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+! Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+!
+! Blade color scheme
+! -----------------------------------------------------------------------------
+
+! eva-white / eva-black
+*foreground:        #EA8532
+*background:        #291D2D
+
+! Colors 0-15.
+
+! black
+*color0:  #000000
+*color8:  #000000
+
+! red = eva-red
+*color1:  #EC2323
+*color9:  #EC2323
+
+! green = eva-orange
+*color2:  #EA8232
+*color10:  #EA8532
+
+! yellow = eva-yellow
+*color3:  #F99D53
+*color11:  #F99D53
+
+! blue = eva-red
+*color4:  #EC2323
+*color12:  #EC2323
+
+! magenta = eva-orange
+*color5:  #43A047
+*color13:  #43A047
+
+! cyan = eva-red 
+*color6:  #EC2323
+*color14:  #EC2323
+
+! white = eva-white
+*color7:  #FBE5E5
+*color15:  #FBE5E5
