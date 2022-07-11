@@ -56,6 +56,12 @@ kitty_install () {
     fi
     
     cp kitty/kitty.conf $HOME/.config/kitty/
+
+    if ! [ -d $HOME/.local/share/fonts ]; then
+        mkdir $HOME/.local/share/fonts
+    fi
+    cp data/MesloLGS\ NF $HOME/.local/share/fonts/
+
 }
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- vim
@@ -73,11 +79,6 @@ vim_install () {
     cp vim/vimrc $HOME/.vimrc
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs $url_vim 
 
-    if [ "$(vim --version | grep -i +python)" != "" ]; then
-        sudo $tool python3-powerline
-    else
-        echo "[SETUP] vim version doesn't support python"
-    fi
 }
 
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- tmux
@@ -104,6 +105,13 @@ tmux_install () {
     cp tmux/tmux.conf.local $HOME/.tmux.conf.local
     mkdir $HOME/.tmux && mkdir $HOME/.tmux/plugins
     git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+    if ! [ -d $HOME/.local/share/fonts ]; then
+        mkdir $HOME/.local/share/fonts
+    fi
+    cp data/MesloLGS\ NF $HOME/.local/share/fonts/
+    
+
+
 }
 
 
@@ -120,6 +128,20 @@ polybar_install () {
     fi
 
     cp polybar/* $HOME/.config/polybar/ -r
+
+    # stolen here :
+    # https://github.com/adi1090x/polybar-themes/blob/master/setup.sh
+
+    FDIR="$HOME/.local/share/fonts"
+
+	echo -e "\n[*] Installing fonts..."
+	if [[ -d "$FDIR" ]]; then
+		cp -rf data/fonts/* "$FDIR"
+	else
+		mkdir -p "$FDIR"
+		cp -rf data/fonts/* "$FDIR"
+	fi
+
 }
 
 if [ "$1" == "--all" ];then
@@ -149,6 +171,3 @@ else
         fi
     done
 fi
-
-
-
