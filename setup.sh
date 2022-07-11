@@ -126,6 +126,10 @@ polybar_install () {
     if [ -d $HOME/.config/polybar ]; then
         mv $HOME/.config/polybar $HOME/.config/polybar.old
     fi
+    
+    if ! [ -d $HOME/.config/polybar ]; then
+        mkdir $HOME/.config/polybar
+    fi
 
     cp polybar/* $HOME/.config/polybar/ -r
 
@@ -134,13 +138,27 @@ polybar_install () {
 
     FDIR="$HOME/.local/share/fonts"
 
-	echo -e "\n[*] Installing fonts..."
+	echo "[SETUP] installing fonts..."
 	if [[ -d "$FDIR" ]]; then
 		cp -rf data/fonts/* "$FDIR"
 	else
 		mkdir -p "$FDIR"
 		cp -rf data/fonts/* "$FDIR"
 	fi
+    
+    echo "[SETUP] installing spotify modules dependencies"
+
+    if ! [ -x "$(command -v playerctl)" ]
+        echo "[SETUP] installing playerctl"
+        sudo $tool playerctl
+    fi
+
+   if ! [ -x "$(command -v zscroll)" ]
+        echo "[SETUP] installing zscroll"
+        git clone https://github.com/noctuid/zscroll
+        cd zscroll
+        sudo python3 setup.py install
+    fi
 
 }
 
