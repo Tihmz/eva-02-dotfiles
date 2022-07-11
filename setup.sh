@@ -33,6 +33,8 @@ zsh_install () {
     fi
 
     cp ./zsh/zshrc $HOME/.zshrc
+    echo "[SETUP] setting zsh as default shell, will take effect after reloging"
+    chsh -s /bin/zsh
 }
 
 
@@ -59,7 +61,7 @@ kitty_install () {
 # -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- vim
 
 vim_install () {
-    if ! [ -x "$(command -v vim-runtime)"]; then
+    if ! [ -x "$(command -v vim)" ]; then
         echo "[SETUP] installing vim"
         sudo $tool vim
     fi
@@ -69,7 +71,7 @@ vim_install () {
     fi
 
     cp vim/vimrc $HOME/.vimrc
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs $vim_url  
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs $url_vim 
 
     if [ "$(vim --version | grep -i +python)" != "" ]; then
         sudo $tool python3-powerline
