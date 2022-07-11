@@ -93,8 +93,13 @@ tmux_install () {
     if [ -f $HOME/.tmux.conf.local ]; then
         mv $HOME/.tmux.conf.local $HOME/.tmux.conf.local.old
     
+    if [ -d $HOME/.tmux/ ]; then
+        mv $HOME/.tmux $HOME/.tmux.old
+    fi
+
     cp tmux/tmux.conf $HOME/.tmux.conf
     cp tmux/tmux.conf.local $HOME/.tmux.conf.local
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 
