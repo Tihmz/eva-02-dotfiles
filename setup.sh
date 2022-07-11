@@ -148,12 +148,12 @@ polybar_install () {
     
     echo "[SETUP] installing spotify modules dependencies"
 
-    if ! [ -x "$(command -v playerctl)" ]
+    if ! [ -x "$(command -v playerctl)" ];then
         echo "[SETUP] installing playerctl"
         sudo $tool playerctl
     fi
 
-   if ! [ -x "$(command -v zscroll)" ]
+    if ! [ -x "$(command -v zscroll)" ];then
         echo "[SETUP] installing zscroll"
         git clone https://github.com/noctuid/zscroll
         cd zscroll
