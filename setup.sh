@@ -60,7 +60,7 @@ kitty_install () {
     if ! [ -d $HOME/.local/share/fonts ]; then
         mkdir $HOME/.local/share/fonts
     fi
-    cp data/MesloLGS\ NF $HOME/.local/share/fonts/
+    cp data/MesloLGS\ NF.ttf $HOME/.local/share/fonts/
 
 }
 
@@ -108,7 +108,7 @@ tmux_install () {
     if ! [ -d $HOME/.local/share/fonts ]; then
         mkdir $HOME/.local/share/fonts
     fi
-    cp data/MesloLGS\ NF $HOME/.local/share/fonts/
+    cp data/MesloLGS\ NF.ttf $HOME/.local/share/fonts/
     
 
 
