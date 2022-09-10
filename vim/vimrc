@@ -65,14 +65,18 @@ set cursorline
 
 " }}}
 
-"n MAPPINGS --------------------------------------------------------------- {{{
+" MAPPINGS --------------------------------------------------------------- {{{
 
 map <C-c> <Esc>
 nnoremap <silent> <C-Left> :tabprevious<CR>                                                                            
 nnoremap <silent> <C-Right> :tabnext<CR>
 nnoremap <silent> <C-Up> :tabnew<CR>
 nnoremap <silent> <C-z> u<CR>
+nnoremap <silent> <C-y> <C-r>
 nnoremap <silent> <C-s> :nohl<CR>
+
+map <silent> <S-c> :s/^/#/<CR>
+vmap <silent> <S-c> :s/^/#/<CR>
 
 " https://superuser.com/questions/401926/how-to-get-shiftarrows-and-ctrlarrows-working-in-vim-in-tmux/402084#402084
 if &term =~ '^tmux'
@@ -128,8 +132,7 @@ augroup END
 
 " }}}
 
-" STATUS LINE ------------------------------------------------------------
-" {{{
+" STATUS LINE ------------------------------------------------------------ {{{
 
 if !exists('g:airline_symbols')
       let g:airline_symbols = {}
@@ -145,5 +148,6 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 
+let g:airline_theme='base16_solarflare'
 " }}}
 
