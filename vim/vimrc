@@ -74,6 +74,7 @@ nnoremap <silent> <C-Up> :tabnew<CR>
 nnoremap <silent> <C-z> u<CR>
 nnoremap <silent> <C-y> <C-r>
 nnoremap <silent> <C-s> :nohl<CR>
+nnoremap <F2> :set nonumber!<CR>
 
 map <silent> <S-c> :s/^/#/<CR>
 vmap <silent> <S-c> :s/^/#/<CR>
