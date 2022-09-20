@@ -128,6 +128,7 @@ alias cls="clear"
 alias python='python3'
 alias vi='vim'
 alias pdf="zathura"
+alias vid="mpv"
 alias htop="htop -t"
 alias cp="cp -r"
 alias tls="tmux ls"
@@ -136,6 +137,8 @@ alias ta="tmux attach -t"
 alias tk="tmux kill-session"
 alias rng="ranger"
 alias vu="vi"
+alias tree="ls --tree"
+
 if [ "$TERM" = 'xterm-kitty' ]
 then
   alias ssh="kitty +kitten ssh"
