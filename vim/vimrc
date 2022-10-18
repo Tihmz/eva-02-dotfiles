@@ -63,6 +63,8 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 hi CursorLine cterm=NONE ctermfg=NONE ctermbg=black
 set cursorline
 
+set background=dark
+colorscheme PaperColor
 " }}}
 
 " MAPPINGS --------------------------------------------------------------- {{{
@@ -115,7 +117,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 """"""""""""""""""
 
 "mapping
-nmap  <silent> <C-b> : TagbarToggle<CR>
+nmap  <silent> <C-b> :TagbarToggle<CR>
 
 let g:tagbar_autofocus = 1
 " }}}
@@ -149,6 +151,7 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 
-let g:airline_theme='base16_solarflare'
+"let g:airline_theme='tomorrow'
+"let g:airline_theme='base16_solarflare'
 " }}}
 
