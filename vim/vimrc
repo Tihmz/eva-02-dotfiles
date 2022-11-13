@@ -24,7 +24,7 @@ Plug 'maxboisvert/vim-simple-complete'
 Plug 'majutsushi/tagbar'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'matze/vim-move'
-
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 " DEFAULT SETTINGS --------------------------------------------------------------- {{{
